@@ -46,10 +46,10 @@ app.get('/api/getAllocation/:userId/:buId', async (req, res) => {
     }
 });
 
-app.get('/api/business-unit/:buId', async (req, res) => {
+app.get('/api/business-unit', async (req, res) => {
     const { buId } = req.params;
     try {
-        const result = await axios.get(`https://productionbe.jinapps.co.uk/api/business-unit/${buId}`, {
+        const result = await axios.get(`https://productionbe.jinapps.co.uk/api/business-unit`, {
             headers: headers
         });
         return res.json({ data: result.data, error: null });
