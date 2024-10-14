@@ -24,9 +24,10 @@ app.get('/projects', async (req, res) => {
                 'email': email
             }
         });
+    
         return res.json({ data: result.data, error: null });
     } catch (error) {
-        return res.json({ data: null, error: error.message || 'An error occurred' });
+        return res.json({ data: null, error: error });
     }
 });
 
