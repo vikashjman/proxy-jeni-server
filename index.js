@@ -46,5 +46,17 @@ app.get('/api/getAllocation/:userId/:buId', async (req, res) => {
     }
 });
 
+app.get('/api/business-unit/:buId', async (req, res) => {
+    const { buId } = req.params;
+    try {
+        const result = await axios.get(`https://productionbe.jinapps.co.uk/api/business-unit/${buId}`, {
+            headers: headers
+        });
+        return res.json({ data: result.data, error: null });
+    } catch (error) {
+        return res.json({ data: null, error: error.message });
+    }
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`SERVER STARTED AT http://localhost:${PORT}`));
