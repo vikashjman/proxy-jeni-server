@@ -21,7 +21,9 @@ app.get('/projects', async (req, res) => {
                 'X-Auth-Token': XAuthToken,
                 'Access-Token': isAccessToken,
                 'user-id': userId,
-                'email': email
+                'email': email,
+                'Host':'productionbe.jinapps.co.uk',
+                'Origin': 'https://jmangroup.jinapps.co.uk'
             }
         });
     
