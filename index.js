@@ -39,7 +39,8 @@ app.get('/projects', async (req, res) => {
 app.get('/api/getAllocation/:userId/:buId', async (req, res) => {
     const { userId, buId } = req.params;
     try {
-        const result = await axios.get(`https://productionbe.jinapps.co.uk/api/getAllocation/${userId}/${buId}`, {
+        
+        const result = await axios.get(`https://productionbe.jinapps.co.uk/api/projects/getAllocation/${userId}/${buId}?startDate=2024-10-01&endDate=2024-10-31&dashboard=dashboard`, {
             headers: headers
         });
         return res.json({ data: result.data, error: null });
