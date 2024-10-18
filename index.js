@@ -28,7 +28,7 @@ const headers = {
   Origin: "https://jmangroup.jinapps.co.uk",
 };
 
-app.get("/projects", async (req, res) => {
+app.get("/api/projects", async (req, res) => {
   try {
     const result = await axios.get(
       "https://productionbe.jinapps.co.uk/api/projects/",
